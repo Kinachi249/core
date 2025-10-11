@@ -40,6 +40,6 @@ class CyncBaseEntity(CoordinatorEntity[CyncCoordinator]):
         return (
             super().available
             and self.coordinator.data is not None
-            and self._cync_device_id in self.coordinator.data
-            and self.coordinator.data[self._cync_device_id].is_online
+            and self.unique_id in self.coordinator.data
+            and self.coordinator.data[self.unique_id].is_online
         )
